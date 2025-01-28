@@ -1,0 +1,27 @@
+// script.js
+document.getElementById('file-input').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    const audioPlayer = document.getElementById('audio-player');
+    const videoPlayer = document.getElementById('video-player');
+    const imageViewer = document.getElementById('image-viewer');
+
+    if (file) {
+        const url = URL.createObjectURL(file);
+        const fileType = file.type.split('/')[0];
+
+        audioPlayer.style.display = 'none';
+        videoPlayer.style.display = 'none';
+        imageViewer.style.display = 'none';
+
+        if (fileType === 'audio') {
+            audioPlayer.src = url;
+            audioPlayer.style.display = 'block';
+        } else if (fileType === 'video') {
+            videoPlayer.src = url;
+            videoPlayer.style.display = 'block';
+        } else if (fileType === 'image') {
+            imageViewer.src = url;
+            imageViewer.style.display = 'block';
+        }
+    }
+});
