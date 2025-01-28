@@ -1,0 +1,14 @@
+/* style.css */
+#media-player {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#player-container {
+    margin-top: 20px;
+}
+
+#audio-player, #video-player, #image-viewer {
+    display: none;
+    max-width: 100%;
+}
